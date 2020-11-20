@@ -3,6 +3,7 @@ def test_del_group(app):
     group = "TestGroup"
     if group not in old_groups_list:
         app.group.add_new_group(group)
+        old_groups_list = app.group.get_groups_list()
     app.group.del_group(group)
     new_groups_list = app.group.get_groups_list()
     # Append old list with new item, clear and sort lists ascending and check if they are still equal
