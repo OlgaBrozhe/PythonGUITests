@@ -5,8 +5,8 @@ from fixture.contact import ContactHelper
 
 class Application:
 
-    def __init__(self, cfg_target):
-        self.application = WinApplication(backend="win32").start(cfg_target)
+    def __init__(self, target):
+        self.application = WinApplication(backend="win32").start(target)
         self.main_window = self.application.window(title="Free Address Book")
         # Wait until the window is visible (opened)
         self.main_window.wait("visible")
